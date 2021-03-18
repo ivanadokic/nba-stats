@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-}
+  font-family: Helvetica, Sans-Serif;
+  }
 
 .App-logo {
   height: 40vmin;
@@ -14,18 +15,20 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #2060df;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgba(233, 23, 23, 0.911);
 }
-
 .App-link {
   color: #61dafb;
+}
+.h1 {
+  color:rgba(233, 23, 23, 0.911)
 }
 
 @keyframes App-logo-spin {

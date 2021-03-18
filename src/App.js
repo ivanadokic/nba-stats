@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useRef, useEffect, useState } from 'react';
 import axios from "axios";
-import {Button, Card} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { Button, Navbar, Alert, Card } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Carousel from 'react-bootstrap/Carousel'
+import { color } from 'd3-color';
 
 
 class App extends Component {
@@ -57,31 +60,122 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-   
-          <form onSubmit={this.handleSubmit}>
-            <h1>NBA Players Statistics</h1>
-           
-            <label>Player's Name
-            
-             <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-              placeholder="Please enter players name"
+      <Jumbotron style={{
+        backgroundColor: '#c8102e', color: '#1d428a'
+      }
+      }>
+
+        <>
+
+          <Navbar bg="light" variant="#1d428a">
+            <Navbar.Brand href="#home">
+              <img
+                alt=""
+                src="https://i.imgur.com/df5A01ss.jpg"
+                width="30"
+
+                height="30"
+                className="d-inline-block align-top"
+              />{' '}
+  NBA Players Statistics
+    </Navbar.Brand>
+          </Navbar>
+        </>
+
+
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="https://i.imgur.com/W9l0690.jpg"
+              alt="First slide"
             />
-            </label>
-           <input type="submit" value="Submit" />
-        
-        </form>
-     Games played🏀: {this.state.playerStats["games_played"]}
-        <br />
-    Points averaged: {this.state.playerStats["pts"]}
-        <br />
-    Rebounds averaged: {this.state.playerStats["reb"]}
-        <br />
-    Assists averaged: {this.state.playerStats["ast"]}
-      </div >
+            <Carousel.Caption>
+              <h3>Brooklyn Nets</h3>
+              <a href="https://www.nba.com/nets/roster/">Brooklyn Nets Roster</a>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="https://i.imgur.com/WwDlvA3.jpg"
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Los Angeles Lakers</h3>
+              <a href="https://www.nba.com/lakers/roster">Los Angeles Lakers Roster</a>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="https://i.imgur.com/ogC0Ljt.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+
+              <a href="https://www.nba.com/teams">NBA Teams</a>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+
+        <div className="App">
+
+
+          <Card style={{
+            backgroundColor: '#1d428a', color: '#ffffff  '
+          }
+          }>
+            <Card.Title>
+
+              <h1>Search for the Player to learn more</h1>
+
+
+
+              <form onSubmit={this.handleSubmit}>
+
+
+                <label>Player's Name
+
+                  <input
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    placeholder="Please enter player's name"
+                  />
+                </label>
+                <input type="submit" variant="primary" value="Submit" />
+
+
+              </form>
+
+              {/* <Card.Img src="https://i.imgur.com/1zPdd1v.jpg" /> */}
+
+              <br />
+                Games played🏀: {this.state.playerStats["games_played"]}
+
+              <br />
+
+                Averaged Points per Game: {this.state.playerStats["pts"]}
+              <br />
+
+
+                Rebounds averaged: {this.state.playerStats["reb"]}
+              <br />
+
+                Averaged Assists per Game: {this.state.playerStats["ast"]}
+
+            </Card.Title>
+          </Card>
+
+
+
+        </div >
+        <Alert variant="light">The data in the reference API, can be found <a href="https://www.balldontlie.io/#stats">here</a></Alert>
+      </Jumbotron >
+
     );
   }
 }

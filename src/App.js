@@ -91,8 +91,8 @@ class App extends Component {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>Brooklyn Nets</h3>
-              <a href="https://www.nba.com/nets/roster/">Brooklyn Nets Roster</a>
+
+              <Button variant="light" size="lg"><a href="https://www.nba.com/nets/roster/">Brooklyn Nets Roster</a></Button>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -103,8 +103,8 @@ class App extends Component {
             />
 
             <Carousel.Caption>
-              <h3>Los Angeles Lakers</h3>
-              <a href="https://www.nba.com/lakers/roster">Los Angeles Lakers Roster</a>
+
+              <Button variant="light" size="lg"><a href="https://www.nba.com/lakers/roster">Los Angeles Lakers Roster</a></Button>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -116,7 +116,7 @@ class App extends Component {
 
             <Carousel.Caption>
 
-              <a href="https://www.nba.com/teams">NBA Teams</a>
+              <Button variant="light" size="lg"><a href="https://www.nba.com/teams">NBA Teams</a></Button>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

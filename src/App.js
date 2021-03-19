@@ -4,7 +4,12 @@ import { Button, Navbar, Alert, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Carousel from 'react-bootstrap/Carousel'
-import { color } from 'd3-color';
+import Image from 'react-bootstrap/Image'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
+
 
 
 class App extends Component {
@@ -13,6 +18,7 @@ class App extends Component {
     this.state = {
       playerName: null,
       playerStats: {}
+
     }
   }
 
@@ -58,6 +64,16 @@ class App extends Component {
       })
   }
 
+  getPlayerPic = (playerPic) => {
+    axios.get(`https://nba-players.herokuapp.com/players-stats=${playerPic}`)
+      .then(async res => {
+        console.log(res.data.data)
+        this.setState({ playerStats: res.data.data[0] })
+      }).catch(err => {
+        console.log(err)
+      })
+  }
+
   render() {
     return (
       <Jumbotron style={{
@@ -77,8 +93,8 @@ class App extends Component {
                 height="30"
                 className="d-inline-block align-top"
               />{' '}
-  NBA Players Statistics
-    </Navbar.Brand>
+              <a href="https://www.nba.com/stats/">  NBA Players Statistics</a>
+            </Navbar.Brand>
           </Navbar>
         </>
 
@@ -151,7 +167,7 @@ class App extends Component {
 
               </form>
 
-              {/* <Card.Img src="https://i.imgur.com/1zPdd1v.jpg" /> */}
+
 
               <br />
                 Games played🏀: {this.state.playerStats["games_played"]}
@@ -174,7 +190,33 @@ class App extends Component {
 
         </div >
         <Alert variant="light">The data in the reference API, can be found <a href="https://www.balldontlie.io/#stats">here</a></Alert>
+
+        <Jumbotron style={{
+          backgroundColor: '#1d428a', color: '#ffffff '
+        }
+        }>
+          < Container >
+            <h1><a href="2021https://www.nbcsports.com/washington/wizards/2021-ranking-top-20-nba-players-right-now">Top 3 NBA Players</a>
+
+            </h1>
+            <Row>
+              <Col xs={6} md={4}>
+                <p>1. LeBron James</p><Image src="https://i.imgur.com/vODz4lWt.png/171x180" thumbnail />
+              </Col>
+
+              <Col xs={6} md={4}>
+                <p>2. Kevin Durant</p><Image src="https://i.imgur.com/xCJDz6Bt.png/171x180" thumbnail />
+              </Col>
+
+              <Col xs={6} md={4}>
+                <p>2. Giannis Antetokounmpo</p><Image src="https://i.imgur.com/ASiw1tvt.png/171x180" thumbnail />
+              </Col>
+            </Row>
+          </Container>
+        </Jumbotron >
+
       </Jumbotron >
+
 
     );
   }

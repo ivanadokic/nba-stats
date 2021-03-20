@@ -196,20 +196,20 @@ class App extends Component {
         }
         }>
           < Container >
-            <h1><a href="2021https://www.nbcsports.com/washington/wizards/2021-ranking-top-20-nba-players-right-now">Top 3 NBA Players</a>
+            <h1><a href="https://www.espn.com/basketball/story/_/id/30489070/ranking-top-10-nba-players-2020-21">Top 3 NBA Players</a>
 
             </h1>
             <Row>
               <Col xs={6} md={4}>
-                <p>1. LeBron James</p><Image src="https://i.imgur.com/vODz4lWt.png/171x180" thumbnail />
+                <p>1. LeBron James</p><Image src="https://i.imgur.com/vODz4lWt.png/171x180" thumbnail max-width />
               </Col>
 
               <Col xs={6} md={4}>
-                <p>2. Kevin Durant</p><Image src="https://i.imgur.com/xCJDz6Bt.png/171x180" thumbnail />
+                <p>2. Anthony Davis</p><Image src="https://i.imgur.com/o4M97xMm.png" thumbnail max-width />
               </Col>
 
               <Col xs={6} md={4}>
-                <p>2. Giannis Antetokounmpo</p><Image src="https://i.imgur.com/ASiw1tvt.png/171x180" thumbnail />
+                <p>2. Giannis Antetokounmpo</p><Image src="https://i.imgur.com/ASiw1tvt.png/171x180" thumbnail max-width />
               </Col>
             </Row>
           </Container>

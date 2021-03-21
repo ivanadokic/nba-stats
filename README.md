@@ -1,3 +1,8 @@
+# Overview
+## Description
+
+NBA stats is an NBA statistics web application. Utilizing Java Script and React NBA stats displays data for the season of any player searched by name.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

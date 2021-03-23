@@ -9,6 +9,7 @@ NBA stats is an NBA statistics web application. Utilizing Java Script and React 
 
 [React](https://reactjs.org/)
 
+[React Bootstrap](https://react-bootstrap.github.io/)
 ### Back-End
 [JavaScript API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API)
 

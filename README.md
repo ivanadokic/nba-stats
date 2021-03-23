@@ -25,6 +25,8 @@ View Games played, Averaged Points per Game, Rebounds averaged, Averaged Assists
 
 View season totals and averages
 
+<a href="https://imgur.com/wkGC4BK"><img src="https://i.imgur.com/wkGC4BK.png" title="source: imgur.com" /></a>
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

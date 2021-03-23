@@ -35,17 +35,17 @@ export default class App extends Component {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  handleChange() {
-    const data = [
-      { id: 0, title: 'Damian Lillard Portland Trail Blazers', value: 48.9, color: '#E03A3E' },
-      { id: 1, title: 'Giannis Antetokounmpo Milwaukee Bucks', value: 53.8, color: '#EEE1C6' },
-      { id: 2, title: 'James Harden Brooklyn Nets', value: 51.3, color: '#CD1041' },
-      { id: 3, title: 'Luka Doncic Dallas Mavericks', value: 51.9, color: '#B8C4CA' },
-      { id: 4, title: 'Nikola Jokic Denver Nuggets', value: 56, color: '#0E2240' },
-      { id: 5, title: 'Joel Embiid Philadelphia 76ers', value: 51.2, color: '#006BB6' }
-    ];
-    this.setState({ data });
-  }
+  // handleChange() {
+  //   const data = [
+  //     { id: 0, title: 'Damian Lillard Portland Trail Blazers', value: 48.9, color: '#E03A3E' },
+  //     { id: 1, title: 'Giannis Antetokounmpo Milwaukee Bucks', value: 53.8, color: '#EEE1C6' },
+  //     { id: 2, title: 'James Harden Brooklyn Nets', value: 51.3, color: '#CD1041' },
+  //     { id: 3, title: 'Luka Doncic Dallas Mavericks', value: 51.9, color: '#B8C4CA' },
+  //     { id: 4, title: 'Nikola Jokic Denver Nuggets', value: 56, color: '#0E2240' },
+  //     { id: 5, title: 'Joel Embiid Philadelphia 76ers', value: 51.2, color: '#006BB6' }
+  //   ];
+  //   this.setState({ data });
+  // }
 
   handleSubmit = (e) => {
     e.preventDefault();

@@ -8,18 +8,43 @@ import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import ChartRace from 'react-chart-race';
+
+export default class App extends Component {
 
 
-
-
-class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       playerName: null,
-      playerStats: {}
-
+      playerStats: {},
+      data: []
     }
+
+  }
+  handleChange() {
+    setInterval(() => {
+      this.handleChange();
+    }, 2000);
+  }
+
+
+  getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  handleChange() {
+    const data = [
+      { id: 0, title: 'Ayfonkarahisar', value: this.getRandomInt(10, 90), color: '#50c4fe' },
+      { id: 1, title: 'Kayseri', value: 38, color: '#3fc42d' },
+      { id: 2, title: 'Muğla', value: this.getRandomInt(10, 90), color: '#c33178' },
+      { id: 3, title: 'Uşak', value: this.getRandomInt(10, 90), color: '#423bce' },
+      { id: 4, title: 'Sivas', value: 58, color: '#c8303b' },
+      { id: 5, title: 'Konya', value: 16, color: '#2c2c2c' }
+    ];
+    this.setState({ data });
   }
 
   handleSubmit = (e) => {
@@ -64,161 +89,162 @@ class App extends Component {
       })
   }
 
-  getPlayerPic = (playerPic) => {
-    axios.get(`https://nba-players.herokuapp.com/players-stats=${playerPic}`)
-      .then(async res => {
-        console.log(res.data.data)
-        this.setState({ playerStats: res.data.data[0] })
-      }).catch(err => {
-        console.log(err)
-      })
-  }
+
 
   render() {
     return (
-      <Jumbotron style={{
-        backgroundColor: '#c8102e', color: '#1d428a'
-      }
-      }>
+      <>
+        <Jumbotron style={{
+          backgroundColor: '#c8102e', color: '#1d428a'
+        }
+        }>
 
-        <>
+          <>
 
-          <Navbar bg="light" variant="#1d428a">
-            <Navbar.Brand href="#home">
+            <Navbar bg="light" variant="#1d428a">
+              <Navbar.Brand href="#home">
+                <img
+                  alt=""
+                  src="https://i.imgur.com/df5A01ss.jpg"
+                  width="30"
+
+                  height="30"
+                  className="d-inline-block align-top"
+                />{' '}
+                <a href="https://www.nba.com/stats/">  NBA Players Statistics</a>
+              </Navbar.Brand>
+            </Navbar>
+          </>
+
+
+          <Carousel>
+            <Carousel.Item>
               <img
-                alt=""
-                src="https://i.imgur.com/df5A01ss.jpg"
-                width="30"
+                className="d-block w-100"
+                src="https://i.imgur.com/W9l0690.jpg"
+                alt="First slide"
+              />
+              <Carousel.Caption>
 
-                height="30"
-                className="d-inline-block align-top"
-              />{' '}
-              <a href="https://www.nba.com/stats/">  NBA Players Statistics</a>
-            </Navbar.Brand>
-          </Navbar>
-        </>
+                <Button variant="light" size="lg"><a href="https://www.nba.com/nets/roster/">Brooklyn Nets Roster</a></Button>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://i.imgur.com/WwDlvA3.jpg"
+                alt="Second slide"
+              />
 
+              <Carousel.Caption>
 
-        <Carousel>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://i.imgur.com/W9l0690.jpg"
-              alt="First slide"
-            />
-            <Carousel.Caption>
+                <Button variant="light" size="lg"><a href="https://www.nba.com/lakers/roster">Los Angeles Lakers Roster</a></Button>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://i.imgur.com/ogC0Ljt.jpg"
+                alt="Third slide"
+              />
 
-              <Button variant="light" size="lg"><a href="https://www.nba.com/nets/roster/">Brooklyn Nets Roster</a></Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://i.imgur.com/WwDlvA3.jpg"
-              alt="Second slide"
-            />
+              <Carousel.Caption>
 
-            <Carousel.Caption>
+                <Button variant="light" size="lg"><a href="https://www.nba.com/teams">NBA Teams</a></Button>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
 
-              <Button variant="light" size="lg"><a href="https://www.nba.com/lakers/roster">Los Angeles Lakers Roster</a></Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://i.imgur.com/ogC0Ljt.jpg"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-
-              <Button variant="light" size="lg"><a href="https://www.nba.com/teams">NBA Teams</a></Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-
-        <div className="App">
+          <div className="App">
 
 
-          <Card style={{
-            backgroundColor: '#1d428a', color: '#ffffff  '
-          }
-          }>
-            <Card.Title>
+            <Card style={{
+              backgroundColor: '#1d428a', color: '#ffffff  '
+            }
+            }>
+              <Card.Title>
 
-              <h1>Search for the Player to learn more</h1>
+                <h1>Search for the Player to learn more</h1>
 
 
 
-              <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
 
 
-                <label>Player's Name
+                  <label>Player's Name
 
                   <input
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    placeholder="Please enter player's name"
-                  />
-                </label>
-                <input type="submit" variant="primary" value="Submit" />
+                      type="text"
+                      value={this.state.value}
+                      onChange={this.handleChange}
+                      placeholder="Please enter player's name"
+                    />
+                  </label>
+                  <input type="submit" variant="primary" value="Submit" />
 
 
-              </form>
+                </form>
 
 
 
-              <br />
+                <br />
                 Games played🏀: {this.state.playerStats["games_played"]}
 
-              <br />
+                <br />
 
                 Averaged Points per Game: {this.state.playerStats["pts"]}
-              <br />
+                <br />
 
 
                 Rebounds averaged: {this.state.playerStats["reb"]}
-              <br />
+                <br />
 
                 Averaged Assists per Game: {this.state.playerStats["ast"]}
 
-            </Card.Title>
-          </Card>
+              </Card.Title>
+            </Card>
 
 
 
-        </div >
-        <Alert variant="light">The data in the reference API, can be found <a href="https://www.balldontlie.io/#stats">here</a></Alert>
+          </div >
+          <Alert variant="light">The data in the reference API, can be found <a href="https://www.balldontlie.io/#stats">here</a></Alert>
 
-        <Jumbotron style={{
-          backgroundColor: '#1d428a', color: '#ffffff '
-        }
-        }>
-          < Container >
-            <h1><a href="https://www.espn.com/basketball/story/_/id/30489070/ranking-top-10-nba-players-2020-21">Top 3 NBA Players</a>
+          <Jumbotron style={{
+            backgroundColor: '#1d428a', color: '#ffffff '
+          }
+          }>
+            < Container >
+              <h1><a href="https://www.espn.com/basketball/story/_/id/30489070/ranking-top-10-nba-players-2020-21">Top 3 NBA Players</a>
 
-            </h1>
-            <Row>
-              <Col xs={6} md={4}>
-                <p>1. LeBron James</p><Image src="https://i.imgur.com/vODz4lWt.png/171x180" thumbnail max-width />
-              </Col>
+              </h1>
+              <Row>
+                <Col xs={6} md={4}>
+                  <p>1. LeBron James</p><Image src="https://i.imgur.com/vODz4lWt.png/171x180" thumbnail max-width />
+                </Col>
 
-              <Col xs={6} md={4}>
-                <p>2. Anthony Davis</p><Image src="https://i.imgur.com/o4M97xMm.png" thumbnail max-width />
-              </Col>
+                <Col xs={6} md={4}>
+                  <p>2. Anthony Davis</p><Image src="https://i.imgur.com/o4M97xMm.png" thumbnail max-width />
+                </Col>
 
-              <Col xs={6} md={4}>
-                <p>2. Giannis Antetokounmpo</p><Image src="https://i.imgur.com/ASiw1tvt.png/171x180" thumbnail max-width />
-              </Col>
-            </Row>
-          </Container>
+                <Col xs={6} md={4}>
+                  <p>2. Giannis Antetokounmpo</p><Image src="https://i.imgur.com/ASiw1tvt.png/171x180" thumbnail max-width />
+                </Col>
+              </Row>
+            </Container>
+          </Jumbotron >
+
         </Jumbotron >
 
-      </Jumbotron >
-
-
+        <ChartRace data={[
+          { id: 0, title: 'Ayfonkarahisar', value: 42, color: '#50c4fe' },
+          { id: 1, title: 'Kayseri', value: 38, color: '#3fc42d' },
+          { id: 2, title: 'Muğla', value: 76, color: '#c33178' },
+          { id: 3, title: 'Uşak', value: 30, color: '#423bce' },
+          { id: 4, title: 'Sivas', value: 58, color: '#c8303b' },
+          { id: 5, title: 'Konya', value: 16, color: '#2c2c2c' }
+        ]} />
+      </>
     );
   }
+
 }
-export default App;

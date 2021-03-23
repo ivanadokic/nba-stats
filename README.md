@@ -6,6 +6,7 @@ NBA stats is an NBA statistics web application. Utilizing Java Script and React 
 
 ### Front-End
 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
 [React](https://reactjs.org/)
 
 ### Back-End

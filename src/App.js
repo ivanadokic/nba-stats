@@ -37,12 +37,12 @@ export default class App extends Component {
 
   handleChange() {
     const data = [
-      { id: 0, title: 'Ayfonkarahisar', value: this.getRandomInt(10, 90), color: '#50c4fe' },
-      { id: 1, title: 'Kayseri', value: 38, color: '#3fc42d' },
-      { id: 2, title: 'Muğla', value: this.getRandomInt(10, 90), color: '#c33178' },
-      { id: 3, title: 'Uşak', value: this.getRandomInt(10, 90), color: '#423bce' },
-      { id: 4, title: 'Sivas', value: 58, color: '#c8303b' },
-      { id: 5, title: 'Konya', value: 16, color: '#2c2c2c' }
+      { id: 0, title: 'Damian Lillard Portland Trail Blazers', value: 48.9, color: '#E03A3E' },
+      { id: 1, title: 'Giannis Antetokounmpo Milwaukee Bucks', value: 53.8, color: '#EEE1C6' },
+      { id: 2, title: 'James Harden Brooklyn Nets', value: 51.3, color: '#CD1041' },
+      { id: 3, title: 'Luka Doncic Dallas Mavericks', value: 51.9, color: '#B8C4CA' },
+      { id: 4, title: 'Nikola Jokic Denver Nuggets', value: 56, color: '#0E2240' },
+      { id: 5, title: 'Joel Embiid Philadelphia 76ers', value: 51.2, color: '#006BB6' }
     ];
     this.setState({ data });
   }
@@ -234,15 +234,21 @@ export default class App extends Component {
           </Jumbotron >
 
         </Jumbotron >
+        <Container>
+          <h1>2020-2021 NBA Season Leaders - ESPN Rating </h1>
+          <ChartRace data={[
+            { id: 0, title: 'Damian Lillard Portland Trail Blazers', value: 48.9, color: '#E03A3E' },
+            { id: 1, title: 'Giannis Antetokounmpo Milwaukee Bucks', value: 53.8, color: '#EEE1C6' },
+            { id: 2, title: 'James Harden Brooklyn Nets', value: 51.3, color: '#CD1041' },
+            { id: 3, title: 'Luka Doncic Dallas Mavericks', value: 51.9, color: '#B8C4CA' },
+            { id: 4, title: 'Nikola Jokic Denver Nuggets', value: 56, color: '#0E2240' },
+            { id: 5, title: 'Joel Embiid Philadelphia 76ers', value: 51.2, color: '#006BB6' }
+          ]} />
+        </Container>
 
-        <ChartRace data={[
-          { id: 0, title: 'Ayfonkarahisar', value: 42, color: '#50c4fe' },
-          { id: 1, title: 'Kayseri', value: 38, color: '#3fc42d' },
-          { id: 2, title: 'Muğla', value: 76, color: '#c33178' },
-          { id: 3, title: 'Uşak', value: 30, color: '#423bce' },
-          { id: 4, title: 'Sivas', value: 58, color: '#c8303b' },
-          { id: 5, title: 'Konya', value: 16, color: '#2c2c2c' }
-        ]} />
+
+
+
       </>
     );
   }

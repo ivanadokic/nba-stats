@@ -10,6 +10,7 @@ NBA stats is an NBA statistics web application. Utilizing Java Script and React 
 
 ### Back-End
 [JavaScript API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API)
+
 Used balldontlie An API for all the NBA games, to access data from the NBA. Games are updated as they complete, and the data goes back as far as the 1979 NBA season🏀🛠️
 
 

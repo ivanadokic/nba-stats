@@ -17,6 +17,8 @@ NBA stats is an NBA statistics web application. Utilizing Java Script and React 
 
 The data in the reference API, [balldontlie API](https://www.balldontlie.io/api), used to create back-end. It's free API to access NBA related data for all the NBA games. Games are updated as they complete, Live(ish) game stats are available (updated every ~10 minutes), and the data goes back as far as the 1979 NBA season🏀🛠️
 
+<a href="https://imgur.com/cbeQmCJ"><img src="https://i.imgur.com/cbeQmCJ.png" title="source: imgur.com" /></a>
+
 ### Features: 
 
 Search any NBA player's stats by typing his name 

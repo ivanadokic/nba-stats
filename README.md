@@ -2,6 +2,12 @@
 ## Description
 
 NBA stats is an NBA statistics web application. Utilizing Java Script and React NBA stats displays data for the season of any player searched by name.
+## Technologies and Frameworks
+
+### Front-End
+[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+React
+
 
 # Getting Started with Create React App
 

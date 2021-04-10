@@ -92,8 +92,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-#### Deployment
-
 #### `yarn build` fails to minify
 
 ## [My Blog](https://dev.to/ivanadokic/react-chart-race-nba-leaders-ece)
